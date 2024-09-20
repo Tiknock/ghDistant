@@ -7,7 +7,7 @@ public class HelloWorld {
     public static void main(String[] args) {
         // Création de la fenêtre
         JFrame frame = new JFrame(Constantes.HELLO_WORLD_TITLE);
-        frame.setSize(400, 400);
+        frame.setSize(500, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Création du panneau pour contenir les labels
