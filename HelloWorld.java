@@ -9,7 +9,8 @@ public class HelloWorld {
 
         JLabel label = new JLabel(Constantes.HELLO_WORLD_TEXT, SwingConstants.CENTER);
         label.setOpaque(true);
-        label.setBackground(Color.RED);
+        label.setBackground(Color.GREEN); // Changement du fond en vert
+        label.setForeground(Color.BLUE); // Ajout de cette ligne pour mettre le texte en bleu
 
         frame.add(label);
         frame.setVisible(true);
