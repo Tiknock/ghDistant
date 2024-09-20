@@ -1,0 +1,25 @@
+#!/bin/bash
+# Hook pré-commit pour enregistrer les informations du commit
+
+# Chemin vers le fichier où stocker les informations du commit
+COMMIT_INFO_PATH="suivi/commitInfo.txt"
+
+# Demander à l'utilisateur s'il veut enregistrer la date et l'heure
+read -p "Sauvegarder la date et l'heure de ce commit (y/[n]) ? " yn < /dev/tty
+yn=${yn:-n}  # Par défaut à 'n' si rien n'est saisi
+
+case $yn in
+    [Yy]* )
+        # Créer ou écraser le fichier avec la date et l'heure du commit
+        echo "commit vérifié le $(date)" > "$COMMIT_INFO_PATH"
+        git add "$COMMIT_INFO_PATH"  # Ajouter le fichier au commit
+        ;;
+    [Nn]* )
+        exit 0  # Ne rien faire si 'n' ou 'enter' est choisi
+        ;;
+    * )
+        exit 0  # Gérer les entrées invalides
+        ;;
+esac
+
+exit 0
